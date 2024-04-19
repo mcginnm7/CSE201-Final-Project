@@ -90,7 +90,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <header class="w3-container w3-xlarge">
     <p class="w3-left">Colors Example</p>
     <p class="w3-right">
-      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <a href="cart.html" onclick="openCart()">
+        <i class="fa fa-shopping-cart w3-margin-right"></i>
+      </a>
       <i class="fa fa-search"></i>
     </p>
   </header>
@@ -251,6 +253,12 @@ function myAccFunc() {
   } else {
     x.className = x.className.replace(" w3-show", "");
   }
+}
+
+// Function to open the cart
+function openCart() {
+  // Display the cart by changing its display style to "block"
+  document.getElementById("cart").style.display = "block";
 }
 
 // Click on the "Jeans" link on page load to open the accordion for demo purposes
