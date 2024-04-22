@@ -22,9 +22,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <h3 class="w3-wide"><b>Name Of Texture Website</b></h3>
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    <a href="#" class="w3-bar-item w3-button">Shirts</a>
+    <a href="#" class="w3-bar-item w3-button">Colors</a>
 <!---->
-<a onclick="myAccFunc(natureOptions)" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="natureBtn">
+<a href="#" onclick="myAccFunc('natureOptions')" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="natureBtn">
     Nature <i class="fa fa-caret-down"></i>
   </a>
   <div id="natureOptions" class="w3-bar-block w3-hide w3-padding-large w3-medium">
@@ -37,11 +37,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <a href="#" class="w3-bar-item w3-button">Sand</a>
   </div>
 <!---->
-    <a onclick="myAccFunc(furnatureOptions)" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="furnitureBtn">
+    <a href="#" onclick="myAccFunc('furnitureOptions')" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="furnitureBtn">
       Furniture <i class="fa fa-caret-down"></i>
     </a>
 
-    <div id="furnatureOptions" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+    <div id="furnitureOptions" class="w3-bar-block w3-hide w3-padding-large w3-medium">
       <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Chairs</a>
       <a href="#" class="w3-bar-item w3-button">Tables</a>
       <a href="#" class="w3-bar-item w3-button">Pillar</a>
@@ -49,13 +49,12 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </div>
 
 <!---->
- <a href="#" class="w3-bar-item w3-button">Colors</a>
-</div>
+
 <!---->
-<a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
-    Material <i class="fa fa-caret-down"></i>
+<a onclick="myAccFunc('materials')" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+    Materials <i class="fa fa-caret-down"></i>
   </a>
-  <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+  <div id="materials" class="w3-bar-block w3-hide w3-padding-large w3-medium">
     <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Bricks</a>
     <a href="#" class="w3-bar-item w3-button">Stone</a>
     <a href="#" class="w3-bar-item w3-button">Concrete</a>
@@ -112,7 +111,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <p>8 items</p>
   </div>
 
-  <!-- Product grid FOR PIECES-->
+  <!-- Product grid FOR PIECES FIND A WAY TO ADD PIECES IN OTHER FILES SO NOT ONE MASSIVE HTML FILE-->
   <div class="w3-row w3-grayscale">
     <div class="w3-col l3 s6">
       <div class="w3-container">
@@ -125,48 +124,49 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
       </div>
     </div>
 
+
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="/w3images/jeans2.jpg" style="width:100%">
+          <img src="images/mulch_1.png" style="width:100%">
           <span class="w3-tag w3-display-topleft">New</span>
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+        <p>Mulch<br><b>$19.99</b></p>
       </div>
       <div class="w3-container">
-        <img src="/w3images/jeans3.jpg" style="width:100%">
-        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+        <img src="images/road_1.png" style="width:100%">
+        <p>Gravel Road<br><b>$20.50</b></p>
       </div>
     </div>
 
     <div class="w3-col l3 s6">
       <div class="w3-container">
-        <img src="/w3images/jeans3.jpg" style="width:100%">
-        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+        <img src="images/grass_1.png" style="width:100%">
+        <p><br><b>$20.50</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="/w3images/jeans4.jpg" style="width:100%">
+          <img src="images/wood_1.png" style="width:100%">
           <span class="w3-tag w3-display-topleft">Sale</span>
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
+        <p>Wood<br><b class="w3-text-red">$14.99</b></p>
       </div>
     </div>
 
     <div class="w3-col l3 s6">
       <div class="w3-container">
-        <img src="/w3images/jeans4.jpg" style="width:100%">
-        <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
+        <img src="images/granite_1.png" style="width:100%">
+        <p>granite<br><b>$14.99</b></p>
       </div>
       <div class="w3-container">
-        <img src="/w3images/jeans1.jpg" style="width:100%">
-        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        <img src="images/wood_2.png" style="width:100%">
+        <p>Wood<br><b>$24.99</b></p>
       </div>
     </div>
   </div>
@@ -189,8 +189,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <script>
 // Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
+function myAccFunc(targetId) {
+  var x = document.getElementById(targetId);
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else {
