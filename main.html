@@ -89,14 +89,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <header class="w3-container w3-xlarge">
     <p class="w3-left">Colors Example</p>
     <p class="w3-right">
-      <div id="cartModal" class="w3-modal">
-        <div class="w3-modal-content w3-animate-zoom">
-          <span onclick="closeCart()" class="w3-button w3-display-topright">&times;</span>
-          <!-- Content of cart.html will be loaded here -->
-          <div id="cartContent"></div>
-        </div>
-      </div>
-      <a href="#" onclick="openCart()">
+      <a href="cart.html" onclick="openCart()">
         <i class="fa fa-shopping-cart w3-margin-right"></i>
       </a>
       <i class="fa fa-search"></i>
@@ -205,27 +198,10 @@ function myAccFunc(targetId) {
   }
 }
 
-// Function to open the cart modal and load content from cart.html
+// Function to open the cart
 function openCart() {
-  var modal = document.getElementById('cartModal');
-  var cartContent = document.getElementById('cartContent');
-
-  // Clear any previous content in the cart modal
-  cartContent.innerHTML = '';
-
-  // Load content of cart.html into the cart modal
-  fetch('cart.html')
-    .then(response => response.text())
-    .then(data => {
-      cartContent.innerHTML = data;
-      modal.style.display = 'block';
-    })
-    .catch(error => console.error('Error loading cart content:', error));
-}
-
-// Function to close the cart modal
-function closeCart() {
-  document.getElementById('cartModal').style.display = 'none';
+  // Display the cart by changing its display style to "block"
+  document.getElementById("cart").style.display = "block";
 }
 
 // Click on the "Jeans" link on page load to open the accordion for demo purposes
