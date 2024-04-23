@@ -1,28 +1,10 @@
-.account-form {
-    margin-top: 30px;
-    color: #ff5733;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff5733;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.input {
-    margin: 5px
-}
-
 .gallery {
     text-align: center;
 }
 
 figure {
     display: inline-block;
-    margin: 2px;
+    margin: 10px;
 }
 
 img {
@@ -33,4 +15,53 @@ img {
 
 figcaption {
     text-align: center;
+}
+
+.cart {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ff8c66;
+}
+
+.input {
+    margin: 5px;
+}
+
+h1, h2 {
+    color: #ff5733;
+    text-align: center;
+}
+
+/* Additional styles for the home button */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-button:hover {
+    background-color: #ff8c66;
 }
