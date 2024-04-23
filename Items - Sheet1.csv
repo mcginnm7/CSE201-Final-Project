@@ -1,0 +1,18 @@
+Item Number,Name,Price,Stock,Rating,Source
+1,carpet 1,10,34,5,images/carpet_1.png
+2,carpet 2,10,24,5,images/carpet_2.png
+3,fabric 1,10,65,5,images/fabric_1.png
+4,granite 1,10,46,5,images/granite_1.png
+5,granite 2,10,11,5,images/granite_2.png
+6,grass 1,10,76,5,images/grass_1.png
+7,mountain 1,10,43,5,images/mountain_1.png
+8,mulch 1,10,23,5,images/mulch_1.png
+9,plastic surface 1,10,20,5,images/plastic_surface_1.png
+10,plastic wood 1,10,25,5,images/plastic_wood_1.png
+11,road 1,10,46,5,images/road_1.png
+12,rubber 1,10,34,5,images/rubber_1.png
+13,rubber 2,10,46,5,images/rubber_2.png
+14,sky 1,10,67,5,images/sky_1.png
+15,wall 1,10,34,5,images/wall_1.png
+16,wood 1,10,23,5,images/wood_1.png
+17,wood 2,10,67,5,images/wood_2.png
