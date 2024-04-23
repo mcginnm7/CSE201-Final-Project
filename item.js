@@ -1,9 +1,11 @@
 class Item {
-    constructor(name, price, stock, rating, image) {
+    constructor(name, price, stock, rating, src) {
         this.name = name;
         this.price = price;
         this.stock = stock;
         this.rating = rating;
-        this.image = image;
+        this.src = src;
     }
 }
+
+module.exports = Item;
