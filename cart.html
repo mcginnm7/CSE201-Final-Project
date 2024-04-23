@@ -10,24 +10,6 @@
     <h1>Texture Hub</h1> <!-- Site Name -->
     <h2>Shopping Cart</h2>
 
-    
-    <div class="gallery">
-        <figure>
-            <img src="item1.jpg" alt="Item 1">
-            <figcaption>Item 1</figcaption>
-            <button class="button add-to-cart">Add to Cart</button>
-        </figure>
-
-        <figure>
-            <img src="item2.jpg" alt="Item 2">
-            <figcaption>Item 2</figcaption>
-            <button class="button add-to-cart">Add to Cart</button>
-        </figure>
-
-        <!-- Add more items here as needed -->
-
-    </div>
-
     <div class="cart">
         <ul class="cart-items">
             <!-- Cart items will be dynamically added here -->
@@ -36,23 +18,37 @@
     </div>
 
     <!-- Home button -->
-    <a href="index.html" class="home-button">Home</a>
+    <a href="main.html" class="home-button">Home</a>
 
+    <script src="item.js"></script>
+    <script src="user.js"></script>
     <script>
         // JavaScript code for handling cart functionality
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement.querySelector('figcaption').textContent;
-                addToCart(item);
-            });
-        });
+        const user = new User('example@example.com', 'password');
 
-        function addToCart(item) {
+        // Sample items
+        const item1 = new Item('Item 1', 10.99, 5, 4.5);
+        const item2 = new Item('Item 2', 19.99, 10, 4.2);
+        const item3 = new Item('Item 3', 14.99, 8, 4.7);
+
+        // Add items to user's cart
+        user.addToCart(item1);
+        user.addToCart(item2);
+        user.addToCart(item3);
+
+        function populateCart() {
             const cartItems = document.querySelector('.cart-items');
-            const li = document.createElement('li');
-            li.textContent = item;
-            cartItems.appendChild(li);
+            cartItems.innerHTML = ''; // Clear existing items
+
+            // Populate the cart with items from the user's cart
+            user.cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `Name: ${item.name}, Price: ${item.price}, Stock: ${item.stock}, Rating: ${item.rating}`;
+                cartItems.appendChild(li);
+            });
         }
+
+        populateCart(); // Populate the cart when the page loads
 
         document.querySelector('.checkout').addEventListener('click', () => {
             alert('Checkout completed!');
