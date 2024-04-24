@@ -10,12 +10,27 @@ function csvToItems(filePath, delimiter=',') {
     // Initialize an empty array to store the items
     const items = [];
 
-    // Loop through each row
-    rows.forEach(row => {
+    // Loop through each row, starting from index 1 to skip the header row
+    for (let i = 1; i < rows.length - 1; i++) {
+        const row = rows[i];
         // Split the row into individual values based on the delimiter
         const [id, name, price, stock, rating, src] = row.split(delimiter);
         // Create a new Item instance and push it to the items array
-        items.push(new Item(name, parseInt(price), parseInt(stock), parseInt(rating), src));
+        const newItem = new Item(name, parseInt(price), parseInt(stock), parseInt(rating), src);
+        items.push(newItem);
+    }
+
+    console.log("Example Items:");
+    console.log("===========================");
+
+    // Print each item and their attributes
+    items.forEach(item => {
+        console.log(`Name: ${item.name}`);
+        console.log(`Price: ${item.price}`);
+        console.log(`Stock: ${item.stock}`);
+        console.log(`Rating: ${item.rating}`);
+        console.log(`Source: ${item.src}`);
+        console.log("---------------------------");
     });
 
     return items;
