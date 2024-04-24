@@ -1,17 +1,38 @@
 .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 90%;
+}
+
+.gallery figure {
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img {
+    display: inline-block;
+}
+
+figcaption {
+    text-align: center;
+    padding: 5px;
+    background-color: #f8f8f8;
+}
+
+
+.shopheader {
+    font-size: 30px;
+    color: red;
+    margin: 10px;
     text-align: center;
 }
 
-figure {
-    display: inline-block;
-    margin: 10px;
-}
 
-img {
-    display: block;
-    width: 200px;
-    height: 200px;
-}
+
+
 
 figcaption {
     text-align: center;
