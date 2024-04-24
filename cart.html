@@ -22,38 +22,7 @@
 
     <script src="item.js"></script>
     <script src="user.js"></script>
-    <script>
-        // JavaScript code for handling cart functionality
-        const user = new User('example@example.com', 'password');
+    <script src="cart.js"></script>
 
-        // Sample items
-        const item1 = new Item('Item 1', 10.99, 5, 4.5);
-        const item2 = new Item('Item 2', 19.99, 10, 4.2);
-        const item3 = new Item('Item 3', 14.99, 8, 4.7);
-
-        // Add items to user's cart
-        user.addToCart(item1);
-        user.addToCart(item2);
-        user.addToCart(item3);
-
-        function populateCart() {
-            const cartItems = document.querySelector('.cart-items');
-            cartItems.innerHTML = ''; // Clear existing items
-
-            // Populate the cart with items from the user's cart
-            user.cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `Name: ${item.name}, Price: ${item.price}, Stock: ${item.stock}, Rating: ${item.rating}`;
-                cartItems.appendChild(li);
-            });
-        }
-
-        populateCart(); // Populate the cart when the page loads
-
-        document.querySelector('.checkout').addEventListener('click', () => {
-            alert('Checkout completed!');
-            // You can add further checkout functionality here
-        });
-    </script>
 </body>
 </html>
