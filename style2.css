@@ -1,0 +1,62 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.hpHeader {
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.navLinks {
+    list-style-type: none;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.navLinks li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.navLinks a.button {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    transition: all 0.3s ease;
+}
+
+.navLinks a.button:hover {
+    background-color: #ff5733; /* Lightened orange on hover */
+    border-color: #ff5733; /* Lightened orange on hover */
+}
+
+/* Additional styles for the footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #ff5733;
+}
+
+/* Additional styles for the footer links */
+footer a {
+    color: #ff5733;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffaa66; /* Lightened orange on hover */
+}
