@@ -25,9 +25,10 @@ function displayImages() {
     const gallery = document.getElementById('imageGallery');
     images.forEach(image => {
         let figure = document.createElement('figure');
-        let imgContainer = document.createElement('div'); // Container for image and caption
+        let imgContainer = document.createElement('div'); // Container for image, caption, and button
         let img = document.createElement('img');
         let figcaption = document.createElement('figcaption');
+        let addButton = document.createElement('button');
 
         img.src = `images/${image.src}`;
         img.alt = image.alt;
@@ -37,25 +38,35 @@ function displayImages() {
 
         // Set up container style
         imgContainer.style.transition = 'transform 0.3s'; // Smooth transition
+        imgContainer.style.position = 'relative'; // Position for absolute button
 
         // Add event listener for mouseover to enlarge the image and caption
         imgContainer.addEventListener('mouseover', () => {
             imgContainer.style.transform = 'scale(1.2)'; // Enlarge container
+            addButton.style.display = 'block'; // Show button
         });
 
-        // Add event listener for mouseout to restore the original size
+        // Add event listener for mouseout to restore the original size and hide the button
         imgContainer.addEventListener('mouseout', () => {
             imgContainer.style.transform = 'scale(1)'; // Restore original size
+            addButton.style.display = 'none'; // Hide button
         });
 
-        // Add event listener for click to handle click behavior
-        imgContainer.addEventListener('click', () => {
-            // Example: Open a modal or navigate to a new page with full-size image
-            console.log(`Clicked on ${image.alt}`);
+        // Style for the button
+        addButton.textContent = 'Add to Cart';
+        addButton.style.position = 'absolute';
+        addButton.style.top = '0'; // Position on top
+        addButton.style.left = '50%';
+        addButton.style.transform = 'translateX(-50%)';
+        addButton.style.display = 'none'; // Initially hidden
+        addButton.addEventListener('click', () => {
+            // Add functionality to add item to cart here
+            console.log(`Added ${image.alt} to cart`);
         });
 
-        // Append image and caption to container
+        // Append image, caption, and button to container
         imgContainer.appendChild(img);
+        imgContainer.appendChild(addButton);
         imgContainer.appendChild(figcaption);
         
         // Append container to figure
@@ -68,4 +79,3 @@ function displayImages() {
 
 // Call the function on page load
 window.onload = displayImages;
-
