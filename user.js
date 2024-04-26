@@ -43,6 +43,10 @@ document.getElementById('createAccountForm').addEventListener('submit', function
     // Create a new instance of the User class
     const newUser = new User(email, password);
 
+    // Store the user object in localStorage
+    localStorage.setItem('currentUser', JSON.stringify(newUser));
+
+    // Redirect to homepage.html
     window.location.href = "homepage.html";
 });
 
@@ -55,9 +59,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const password = document.getElementById('loginPassword').value;
 
     // Create a new instance of the User class
-    // OR AUTHENTICATE USER
+    // OR AUTHENTICATE USER FOR LOGIN
     const loggedInUser = new User(email, password);
 
+    // Store the user object in localStorage
+    localStorage.setItem('currentUser', JSON.stringify(loggedInUser));
+
+    // Redirect to homepage.html
     window.location.href = "homepage.html";
 });
-
