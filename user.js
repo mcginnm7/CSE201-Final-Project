@@ -24,3 +24,40 @@ class User {
         this.cart = [];
     }
 }
+
+// Function to handle form submission for creating an account
+document.getElementById('createAccountForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the values from the form
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+        alert("Password and Confirm Password do not match!");
+        return; // Exit the function if passwords don't match
+    }
+
+    // Create a new instance of the User class
+    const newUser = new User(email, password);
+
+    window.location.href = "homepage.html";
+});
+
+// Function to handle form submission for login
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the values from the form
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    // Create a new instance of the User class
+    // OR AUTHENTICATE USER
+    const loggedInUser = new User(email, password);
+
+    window.location.href = "homepage.html";
+});
+
