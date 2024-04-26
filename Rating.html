@@ -1,84 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shopping Website Rating System</title>
-<style>
-    /* Style for stars */
-    .rating {
-        unicode-bidi: bidi-override;
-        direction: rtl;
-        margin-bottom: 10px; /* Add some space between stars and textarea */
-    }
-    .rating > span {
-        display: inline-block;
-        position: relative;
-        width: 1.1em;
-    }
-    .rating > span:hover:before,
-    .rating > span:hover ~ span:before {
-        content: "\2605";
-        position: absolute;
-        color: gold;
-    }
-    .rating > input {
-        display: none;
-    }
-    .rating > label {
-        color: grey;
-        font-size: 2em;
-    }
-    .rating > input:checked ~ label,
-    .rating:not(:checked) > label:hover,
-    .rating:not(:checked) > label:hover ~ label {
-        color: gold;
-    }
-    .rating > input:checked ~ label:hover,
-    .rating > input:checked ~ label:hover ~ label,
-    .rating > input:checked ~ label:hover ~ label:hover,
-    .rating > label:hover ~ input:checked ~ label {
-        color: grey;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website Rating System</title>
+    <a href="homepage.html" class="w3-button w3-light-grey">Homepage</a>
+    <style>
+        /* Style for stars */
+        .rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            margin-bottom: 10px;
+            /* Add some space between stars and textarea */
+        }
+
+        .rating>span {
+            display: inline-block;
+            position: relative;
+            width: 1.1em;
+        }
+
+        .rating>span:hover:before,
+        .rating>span:hover~span:before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
+        }
+
+        .rating>input {
+            display: none;
+        }
+
+        .rating>label {
+            color: grey;
+            font-size: 2em;
+        }
+
+        .rating>input:checked~label,
+        .rating:not(:checked)>label:hover,
+        .rating:not(:checked)>label:hover~label {
+            color: gold;
+        }
+
+        .rating>input:checked~label:hover,
+        .rating>input:checked~label:hover~label,
+        .rating>input:checked~label:hover~label:hover,
+        .rating>label:hover~input:checked~label {
+            color: grey;
+        }
+    </style>
 </head>
+
 <body>
 
-<h2>Product Name</h2>
+    <h2>Product Name</h2>
 
-<div class="rating">
-    <input type="radio" id="star5" name="rating" value="5">
-    <label for="star5">☆</label>
-    <input type="radio" id="star4" name="rating" value="4">
-    <label for="star4">☆</label>
-    <input type="radio" id="star3" name="rating" value="3">
-    <label for="star3">☆</label>
-    <input type="radio" id="star2" name="rating" value="2">
-    <label for="star2">☆</label>
-    <input type="radio" id="star1" name="rating" value="1">
-    <label for="star1">☆</label>
-</div>
+    <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5">☆</label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4">☆</label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3">☆</label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2">☆</label>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1">☆</label>
+    </div>
 
-<textarea id="description" rows="4" cols="50" placeholder="Leave a description"></textarea>
+    <textarea id="description" rows="4" cols="50" placeholder="Leave a description"></textarea>
 
-<button onclick="submitRating()">Submit</button>
+    <button onclick="submitRating()">Submit</button>
 
-<!-- Textbox to display combined rating and description -->
-<textarea id="combinedRating" rows="4" cols="50" readonly></textarea>
+    <!-- Textbox to display combined rating and description -->
+    <textarea id="combinedRating" rows="4" cols="50" readonly></textarea>
 
-<script>
-    function submitRating() {
-        const rating = document.querySelector('input[name="rating"]:checked');
-        const description = document.getElementById('description').value;
-        if (rating && description) {
-            const combinedText = "Rating: " + rating.value + "\nDescription: " + description;
-            document.getElementById('combinedRating').value = combinedText;
-            // Here you can send the rating and description to your server using AJAX
-        } else {
-            alert("Please select a rating and leave a description.");
+    <script>
+        function submitRating() {
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const description = document.getElementById('description').value;
+            if (rating && description) {
+                const combinedText = "Rating: " + rating.value + "\nDescription: " + description;
+                document.getElementById('combinedRating').value = combinedText;
+                // Here you can send the rating and description to your server using AJAX
+            } else {
+                alert("Please select a rating and leave a description.");
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
+
 </html>
