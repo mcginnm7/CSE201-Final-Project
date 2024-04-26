@@ -25,6 +25,7 @@ function displayImages() {
     const gallery = document.getElementById('imageGallery');
     images.forEach(image => {
         let figure = document.createElement('figure');
+        let imgContainer = document.createElement('div'); // Container for image and caption
         let img = document.createElement('img');
         let figcaption = document.createElement('figcaption');
 
@@ -34,11 +35,37 @@ function displayImages() {
         img.height = 200;
         figcaption.textContent = image.caption;
 
-        figure.appendChild(img);
-        figure.appendChild(figcaption);
+        // Set up container style
+        imgContainer.style.transition = 'transform 0.3s'; // Smooth transition
+
+        // Add event listener for mouseover to enlarge the image and caption
+        imgContainer.addEventListener('mouseover', () => {
+            imgContainer.style.transform = 'scale(1.2)'; // Enlarge container
+        });
+
+        // Add event listener for mouseout to restore the original size
+        imgContainer.addEventListener('mouseout', () => {
+            imgContainer.style.transform = 'scale(1)'; // Restore original size
+        });
+
+        // Add event listener for click to handle click behavior
+        imgContainer.addEventListener('click', () => {
+            // Example: Open a modal or navigate to a new page with full-size image
+            console.log(`Clicked on ${image.alt}`);
+        });
+
+        // Append image and caption to container
+        imgContainer.appendChild(img);
+        imgContainer.appendChild(figcaption);
+        
+        // Append container to figure
+        figure.appendChild(imgContainer);
+        
+        // Append figure to gallery
         gallery.appendChild(figure);
     });
 }
 
 // Call the function on page load
 window.onload = displayImages;
+
