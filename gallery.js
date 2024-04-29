@@ -19,11 +19,10 @@ const images = [
     { src: 'wood_2.png', alt: 'Wood', caption: 'Wood', stock: 19 }
 ];
 
-
-
-// Function to display images
 function displayImages() {
     const gallery = document.getElementById('imageGallery');
+    gallery.innerHTML = ''; // Clear the gallery before populating it again
+
     images.forEach(image => {
         let figure = document.createElement('figure');
         let imgContainer = document.createElement('div'); // Container for image, caption, and button
@@ -63,14 +62,15 @@ function displayImages() {
         addButton.style.top = '0'; // Position on top
         addButton.style.left = '50%';
         addButton.style.transform = 'translateX(-50%)';
-        addButton.style.display = 'none'; // Initially hidden
+        addButton.style.display = image.stock > 0 ? 'block' : 'none'; // Initially hidden if stock is 0
+        addButton.disabled = image.stock === 0; // Disable the button when stock is 0
         addButton.addEventListener('click', () => {
             // Add functionality to add item to cart here
             console.log(`Added ${image.alt} to cart`);
-
             if (image.stock > 0) {
                 image.stock--;
                 stockDisplay.textContent = `Stock remaining: ${image.stock}`;
+                addButton.disabled = image.stock === 0; // Disable the button when stock reaches 0
             }
         });
 
