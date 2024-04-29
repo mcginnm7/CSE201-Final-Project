@@ -54,35 +54,68 @@
 
 <body>
 
-    <h2>Product Name</h2>
+    <h2>Rate Items</h2>
 
-    <div class="rating">
-        <input type="radio" id="star5" name="rating" value="5">
-        <label for="star5">☆</label>
-        <input type="radio" id="star4" name="rating" value="4">
-        <label for="star4">☆</label>
-        <input type="radio" id="star3" name="rating" value="3">
-        <label for="star3">☆</label>
-        <input type="radio" id="star2" name="rating" value="2">
-        <label for="star2">☆</label>
-        <input type="radio" id="star1" name="rating" value="1">
-        <label for="star1">☆</label>
-    </div>
+    <div id="items"></div>
 
-    <textarea id="description" rows="4" cols="50" placeholder="Leave a description"></textarea>
-
-    <button onclick="submitRating()">Submit</button>
-
-    <!-- Textbox to display combined rating and description -->
-    <textarea id="combinedRating" rows="4" cols="50" readonly></textarea>
+    <button onclick="addRating()">Add Item</button>
 
     <script>
-        function submitRating() {
-            const rating = document.querySelector('input[name="rating"]:checked');
-            const description = document.getElementById('description').value;
+        function addRating() {
+            const itemId = Math.floor(Math.random() * 1000); // Generate a unique ID for each item
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'item';
+
+            const ratingDiv = document.createElement('div');
+            ratingDiv.className = 'rating';
+
+            // Create radio buttons for rating
+            for (let i = 5; i >= 1; i--) {
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.id = 'star' + i + '_' + itemId;
+                input.name = 'rating_' + itemId;
+                input.value = i;
+                const label = document.createElement('label');
+                label.htmlFor = 'star' + i + '_' + itemId;
+                label.innerHTML = '☆';
+                ratingDiv.appendChild(input);
+                ratingDiv.appendChild(label);
+            }
+
+            const descriptionTextarea = document.createElement('textarea');
+            descriptionTextarea.id = 'description_' + itemId;
+            descriptionTextarea.rows = 4;
+            descriptionTextarea.cols = 50;
+            descriptionTextarea.placeholder = 'Leave a description';
+
+            const submitButton = document.createElement('button');
+            submitButton.innerHTML = 'Submit';
+            submitButton.onclick = function () {
+                submitRating(itemId);
+            };
+
+            const combinedRatingTextarea = document.createElement('textarea');
+            combinedRatingTextarea.id = 'combinedRating_' + itemId;
+            combinedRatingTextarea.rows = 4;
+            combinedRatingTextarea.cols = 50;
+            combinedRatingTextarea.readOnly = true;
+
+            itemDiv.appendChild(ratingDiv);
+            itemDiv.appendChild(descriptionTextarea);
+            itemDiv.appendChild(submitButton);
+            itemDiv.appendChild(combinedRatingTextarea);
+
+            document.getElementById('items').appendChild(itemDiv);
+        }
+
+        function submitRating(itemId) {
+            const rating = document.querySelector('input[name="rating_' + itemId + '"]:checked');
+            const description = document.getElementById('description_' + itemId).value;
+            const combinedRatingTextarea = document.getElementById('combinedRating_' + itemId);
             if (rating && description) {
                 const combinedText = "Rating: " + rating.value + "\nDescription: " + description;
-                document.getElementById('combinedRating').value = combinedText;
+                combinedRatingTextarea.value = combinedText;
                 // Here you can send the rating and description to your server using AJAX
             } else {
                 alert("Please select a rating and leave a description.");
