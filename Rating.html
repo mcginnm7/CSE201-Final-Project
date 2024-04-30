@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Website Rating System</title>
-    <a href="homepage.html" class="w3-button w3-light-grey">Homepage</a>
+    <link rel="stylesheet" href="style2.css">
     <style>
         /* Style for stars */
         .rating {
@@ -54,7 +54,21 @@
 
 <body>
 
-    <h2>Rate Items</h2>
+    <header class="hpHeader">
+        <h1>Rating</h1>
+        <div class="userSection">
+            <span id="userStatus">Logged in</span>
+            <a href="index.html" class="button">Logout</a>
+        </div>
+    </header>
+     
+     <nav>
+        <ul class="navLinks">
+            <li><a href="cart.html" class="button">Cart</a></li>
+            <li><a href="shop.html" class="button">Shop</a></li>
+            <li><a href="homepage.html" class="button">HomePage</a></li>
+        </ul>
+    </nav>
 
     <div id="items"></div>
 
@@ -126,3 +140,5 @@
 </body>
 
 </html>
+
+
