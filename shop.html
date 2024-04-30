@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Texture Hub</title>
-<link rel="stylesheet" href="style.css">
-
-
-
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texture Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <header class="hpHeader">
         <h1>Shop</h1>
+        <a href="#" class="button cart-button" onclick="toggleMessage()">Cart</a> <!-- Updated onclick event to toggle the message -->
         <div class="userSection">
             <span id="userStatus">Logged in</span>
             <a href="index.html" class="button">Logout</a>
@@ -17,20 +18,22 @@
 
     <nav>
         <ul class="navLinks">
-            <li><a href="cart.html" class="button">Cart</a></li>
             <li><a href="homepage.html" class="button">Home Page</a></li>
             <li><a href="Rating.html" class="button">Rating</a></li>
         </ul>
     </nav>
 
+    <div class="gallery" id="imageGallery">
+        <!-- Images will be dynamically inserted here -->
+    </div>
 
+    <!-- Message box hidden by default -->
+    <div id="messageBox" class="message-box" style="display: none;" onclick="hideMessage()">
+        <!-- Message will be populated here -->
+    </div>
 
-
-</div>
-<div class="gallery" id="imageGallery">
-    <!-- Images will be dynamically inserted here -->
-</div>
-<script src="gallery.js"></script>
+    <!-- Include the JavaScript file -->
+    <script src="gallery.js"></script>
 
 </body>
 </html>

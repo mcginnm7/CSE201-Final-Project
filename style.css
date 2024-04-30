@@ -8,7 +8,6 @@ body {
     margin: 0;
 }
 
-
 .hpHeader {
     background-color: #333;
     color: #ffffff;
@@ -16,7 +15,6 @@ body {
     text-align: center;
     margin-bottom: 20px;
 }
-
 
 .gallery {
     display: flex;
@@ -42,17 +40,10 @@ figcaption {
     background-color: #f8f8f8;
 }
 
-
 .shopheader {
     font-size: 30px;
     color: rgb(255, 255, 255);
     margin: 10px;
-    text-align: center;
-}
-
-
-
-figcaption {
     text-align: center;
 }
 
@@ -81,8 +72,6 @@ figcaption {
     margin-right: 0;
 }
 
-
-
 .button {
     text-decoration: none;
     color: #fff;
@@ -97,13 +86,10 @@ figcaption {
     background-color: #ff8c66;
 }
 
-
 .input {
     margin: 5px;
     text-align: center;
 }
-
-
 
 h1,
 h2 {
@@ -139,8 +125,6 @@ h2 {
     margin-left: 10px;
     text-align: left;
 }
-
-
 
 /*header style*/
 
@@ -186,7 +170,6 @@ h2 {
     margin-right: 10px;
 }
 
-
 @media screen and (max-width: 768px) {
     .hpHeader {
         display: flex;
@@ -206,7 +189,6 @@ h2 {
     .userSection span {
         margin-right: 5px;
     }
-  
 
     .navLinks {
         padding: 5px 0;
@@ -224,4 +206,39 @@ h2 {
     footer {
         padding: 5px 0;
     }
+}
+
+/* Add this CSS to position the cart button */
+.cart-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    /* Add this CSS for responsiveness */
+    .cart-button {
+        position: static;
+        margin-bottom: 10px; /* Add some margin-bottom for better spacing */
+    }
+}
+
+/* Style for the message box */
+.message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999; /* Ensure it's above other elements */
+    width: 300px; /* Adjust the width as needed */
+}
+
+/* Style for the close button */
+.close-button {
+    position: absolute
 }
