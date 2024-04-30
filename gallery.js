@@ -71,7 +71,7 @@ function displayImages() {
             console.log(`Added ${image.alt} to cart`);
             if (image.stock > 0) {
                 image.stock--;
-                stockDisplay.textContent = `Stock remaining: ${image.stock}`;
+                stockDisplay.textContent = `Stock remaining: ${image.stock}`; // Update stock display
                 addButton.disabled = image.stock === 0; // Disable the button when stock reaches 0
                 cart.push(image);
             }
@@ -137,7 +137,13 @@ function populateCart() {
             deleteButton.addEventListener('click', () => {
                 // Remove item from cart and re-populate the cart
                 cart.splice(index, 1);
+                // Restore the stock in the images array
+                const imageIndex = images.findIndex(img => img.src === image.src);
+                if (imageIndex !== -1) {
+                    images[imageIndex].stock++;
+                }
                 populateCart();
+                displayImages(); // Update the stock display in the gallery
             });
 
             // Append image, text, and delete button to the item container
