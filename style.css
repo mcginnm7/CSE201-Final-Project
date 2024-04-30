@@ -2,12 +2,19 @@
 Homepage CSS
 */
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #786a6a; /* Changed background color */
+    margin: 0;
+}
+
+
 .hpHeader {
-    background-color: black;
-    color: red;
-    font-size: 30px;
+    background-color: #333;
+    color: #ffffff;
+    padding: 20px;
     text-align: center;
-    margin: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -38,12 +45,10 @@ figcaption {
 
 .shopheader {
     font-size: 30px;
-    color: red;
+    color: rgb(255, 255, 255);
     margin: 10px;
     text-align: center;
 }
-
-
 
 
 
@@ -61,23 +66,30 @@ figcaption {
     padding: 0;
 }
 
-.header {
-
+.navLinks {
+    list-style-type: none;
+    padding: 0;
     text-align: center;
-    margin: 10px;
-    font-size: 30px;
-    color: white;
-    background-color: black;
-
 }
 
-.button {
+.navLinks li {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff5733;
-    color: #fff;
+    margin-right: 10px;
+}
+
+.navLinks li:last-child {
+    margin-right: 0;
+}
+
+
+
+.button {
     text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #555;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
@@ -91,14 +103,11 @@ figcaption {
     text-align: center;
 }
 
-.account-form {
 
-    text-align: center;
-}
 
 h1,
 h2 {
-    color: #ff5733;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -129,4 +138,90 @@ h2 {
     flex-grow: 1;
     margin-left: 10px;
     text-align: left;
+}
+
+
+
+/*header style*/
+
+.header {
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+    color: white;
+    background-color: black;
+}
+
+.account-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.input {
+    margin: 5px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ff8c66;
+}
+
+.userSection {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#userStatus {
+    margin-right: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .hpHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .hpHeader h1 {
+        margin-bottom: 10px;
+    }
+
+    .userSection {
+        margin-top: 10px;
+    }
+
+    .userSection span {
+        margin-right: 5px;
+    }
+  
+
+    .navLinks {
+        padding: 5px 0;
+        text-align: center;
+    }
+
+    .navLinks li {
+        margin-right: 5px;
+    }
+
+    .button {
+        padding: 8px 12px;
+    }
+
+    footer {
+        padding: 5px 0;
+    }
 }
