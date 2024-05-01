@@ -208,7 +208,7 @@ h2 {
     }
 }
 
-/* Add this CSS to position the cart button */
+/* Added to position the cart button */
 .cart-button {
     position: absolute;
     top: 20px;
@@ -216,7 +216,7 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-    /* Add this CSS for responsiveness */
+    /* Added for responsiveness */
     .cart-button {
         position: static;
         margin-bottom: 10px; /* Add some margin-bottom for better spacing */

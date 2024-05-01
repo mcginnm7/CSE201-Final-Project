@@ -67,7 +67,6 @@ function displayImages() {
         addButton.style.display = image.stock > 0 ? 'block' : 'none'; // Initially hidden if stock is 0
         addButton.disabled = image.stock === 0; // Disable the button when stock is 0
         addButton.addEventListener('click', () => {
-            // Add functionality to add item to cart here
             console.log(`Added ${image.alt} to cart`);
             if (image.stock > 0) {
                 image.stock--;
